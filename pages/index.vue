@@ -1,11 +1,16 @@
 <template>
   <div class="container">
+    <Profiles />
   </div>
 </template>
 
 <script>
+import Profiles from '@/components/Profiles.vue'
 
 export default {
+  components: {
+    Profiles
+  }
 }
 </script>
 
@@ -16,6 +21,5 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
   }
 </style>
