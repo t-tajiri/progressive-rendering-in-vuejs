@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Profiles />
+    <Profiles :profiles="profiles" />
   </div>
 </template>
 
@@ -10,6 +10,10 @@ import Profiles from '@/components/Profiles.vue'
 export default {
   components: {
     Profiles
+  },
+  async asyncData({ $axios }) {
+    const { results } = await $axios.$get('https://randomuser.me/api/?results=500')
+    return { profiles: results }
   }
 }
 </script>
